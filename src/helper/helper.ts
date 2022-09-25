@@ -9,6 +9,19 @@ export class APIService {
         const file = fileSystem.readFileSync('src/mock-db/user.json');
         this.users = JSON.parse(file.toString());
     }
+
+    private getNextId(): number {
+        const lastUser = this.users[this.users.length - 1]
+        return lastUser.id + 1;
+    }
+
+    public create(user: UserEntity): void {
+        user.id = this.getNextId()
+        this.users.push(user)
+        fileSystem.writeFile('src/mock-db/user.json', JSON.stringify(this.users), (err) => {
+            if (err) console.error(err)
+        })
+    }
     public findAll(): UserEntity[] {
         return this.users
     }

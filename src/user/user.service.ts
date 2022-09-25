@@ -9,6 +9,10 @@ export class UserService {
         // private userRepository: Repository<UserEntity>
     }
 
+    create(user: UserEntity): void {
+        this.apiService.create(user)
+    }
+
     findAll(): UserEntity[] {
         return this.apiService.findAll()
     }

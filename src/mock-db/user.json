@@ -1,14 +1,54 @@
 [
     {
         "id": 1,
-        "firstName": "Mark",
-        "lastName": "Otto",
-        "country": "USA"
+        "firstname": "tangtai",
+        "lastname": "world",
+        "country": "Thailand",
+        "citizenID": "1709901229156",
+        "phoneNumber": "",
+        "address": "",
+        "career": "",
+        "salary": "",
+        "canEdit": true,
+        "canDelete": true
     },
     {
         "id": 2,
-        "firstName": "Jacob",
-        "lastName": "Thornis",
-        "country": "Australia"
+        "firstname": "Natcha",
+        "lastname": "Manasuntorn",
+        "country": "Thailand",
+        "citizenID": "",
+        "phoneNumber": "0622038668",
+        "address": "10 ราษฎรยินดี ต.หน้าเมือง",
+        "career": "",
+        "salary": "",
+        "canEdit": true,
+        "canDelete": true
+    },
+    {
+        "firstname": "Jacob",
+        "lastname": "WorkAround",
+        "country": "Australia",
+        "citizenID": "4125361237198",
+        "phoneNumber": "0283774765",
+        "address": "",
+        "career": "",
+        "salary": "",
+        "canEdit": false,
+        "canDelete": true,
+        "id": 3
+    },
+    {
+        "firstname": "User",
+        "lastname": "CantDelete",
+        "country": "DIsable",
+        "citizenID": "",
+        "phoneNumber": "",
+        "address": "",
+        "career": "",
+        "salary": "",
+        "canEdit": true,
+        "canDelete": false,
+        "id": 4
     }
 ]

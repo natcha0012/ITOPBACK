@@ -2,7 +2,7 @@ import { Column, PrimaryGeneratedColumn } from "typeorm";
 
 export class UserEntity {
     @PrimaryGeneratedColumn()
-    id: number
+    id?: number
 
     @Column()
     firstName: string;
@@ -12,4 +12,25 @@ export class UserEntity {
 
     @Column()
     country: string;
+
+    @Column()
+    canEdit: boolean;
+
+    @Column()
+    canDelete: boolean;
+
+    @Column()
+    citizenid?: string;
+
+    @Column()
+    phoneNumber?: string;
+
+    @Column()
+    address?: string;
+
+    @Column()
+    career?: string;
+
+    @Column()
+    salary?: string;
 }
