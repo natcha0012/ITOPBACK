@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { UserEntity } from './entity/user.entity';
 import { UserService } from './user.service';
 
@@ -19,6 +19,11 @@ export class UserController {
     @Post()
     createUser(@Body() user: UserEntity) {
         this.userService.create(user)
+    }
+
+    @Put(':id')
+    updateUser(@Param('id') id: string, @Body() body: Partial<UserEntity>) {
+        this.userService.update(Number(id), body);
     }
 
     @Delete(':id')

@@ -21,6 +21,10 @@ export class UserService {
         return this.apiService.findById(id)
     }
 
+    update(id: number, body: Partial<UserEntity>) {
+        return this.apiService.update(id, body)
+    }
+
     deleteById(id: number): void {
         this.apiService.deleteById(id);
     }

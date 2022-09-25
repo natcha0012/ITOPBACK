@@ -30,6 +30,17 @@ export class APIService {
         return this.users.find(user => user.id === id)
     }
 
+    public update(id: number, body: Partial<UserEntity>) {
+        const keys = Object.keys(body);
+        this.users.forEach(user => {
+            if (user.id === id) {
+                for (let key of keys) {
+                    user[key] = body[key]
+                }
+            }
+        })
+    }
+
     public deleteById(id: number): void {
         this.users = this.users.filter(user => user.id !== id)
         fileSystem.writeFile('src/mock-db/user.json', JSON.stringify(this.users), (err) => {
