@@ -13,8 +13,8 @@ export class UserService {
         this.apiService.create(user)
     }
 
-    findAll(): UserEntity[] {
-        return this.apiService.findAll()
+    findAll(options): UserEntity[] | { items: UserEntity[], total: number } {
+        return this.apiService.findAll(options)
     }
 
     findById(id: number): UserEntity {

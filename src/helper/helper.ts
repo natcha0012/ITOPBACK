@@ -22,7 +22,11 @@ export class APIService {
             if (err) console.error(err)
         })
     }
-    public findAll(): UserEntity[] {
+    public findAll(options?: { limit: number, skip: number }): UserEntity[] | { items: UserEntity[], total: number } {
+        if (options) {
+            const { limit, skip } = options;
+            return { items: this.users.slice(skip, limit + skip), total: this.users.length }
+        }
         return this.users
     }
 

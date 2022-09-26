@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
 import { UserEntity } from './entity/user.entity';
 import { UserService } from './user.service';
 
@@ -7,8 +7,9 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     @Get()
-    getUserlist(): UserEntity[] {
-        return this.userService.findAll();
+    getUserlist(@Query() query) {
+        const options = { skip: Number(query.skip), limit: Number(query.limit) }
+        return this.userService.findAll(options);
     }
 
     @Get(':id')
